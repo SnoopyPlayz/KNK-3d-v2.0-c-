@@ -100,11 +100,13 @@ add_cxflags("-Ofast", "-flto", "-s", "-static", "-mwindows")
 --
 --add_cxflags("-Wall", "-s","-g", "-Wextra", "-L/usr/x86_64-w64-mingw32/lib")
 --
-add_ldflags("-L/usr/x86_64-w64-mingw32/lib", {force = true})
+add_ldflags("-static -static-libgcc -static-libstdc++","-L/use/lib/gcc/x86_64-w64-mingw32/10-posix")
+add_ldflags("-std=c++17")
+--add_ldflags("-L/usr/x86_64-w64-mingw32/lib", {force = true})
 --add_ldflags("-fsanitize=address", {force = true})
 --
 --no gcc on windows
-set_toolchains("gcc")
+--set_toolchains("gcc")
 
 --
 --
